@@ -111,7 +111,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Divider() {
   return (
-    <div className="flex items-center gap-4 my-20">
+    <div className="flex items-center gap-4 my-24">
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="w-2 h-2 rounded-full bg-blue-200" />
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
@@ -220,7 +220,7 @@ export default function Page() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-8 sm:px-12 h-16 flex items-center justify-between">
           <motion.a
             href="#"
             whileHover={{ scale: 1.04 }}
@@ -292,7 +292,7 @@ export default function Page() {
       </motion.nav>
 
       {/* ─────────────────────────── HERO ─────────────────────────── */}
-      <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-6 overflow-hidden">
+      <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-8 sm:px-12 overflow-hidden">
         <motion.div style={{ y: heroY }} className="max-w-4xl mx-auto text-center">
           {/* Avatar */}
           <motion.div
@@ -302,10 +302,14 @@ export default function Page() {
             className="relative inline-block mb-8"
           >
             <div
-              className="w-28 h-28 rounded-3xl mx-auto flex items-center justify-center text-5xl shadow-xl shadow-blue-100"
+              className="w-28 h-28 rounded-3xl mx-auto overflow-hidden shadow-xl shadow-blue-100"
               style={{ background: "linear-gradient(135deg,#bfdbfe,#ddd6fe,#99f6e4)" }}
             >
-              👨‍💻
+              <img
+                src="/avatar.png"
+                alt="Piyush Patel"
+                className="w-full h-full object-cover"
+              />
             </div>
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -402,10 +406,10 @@ export default function Page() {
         </motion.div>
       </section>
 
-      <main className="max-w-6xl mx-auto px-6">
+      <main className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-16">
 
         {/* ─────────────────────────── IMPACT ─────────────────────────── */}
-        <section className="pb-8">
+        <section className="py-16">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -422,7 +426,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── EXPERIENCE ─────────────────────────── */}
-        <section id="experience" className="scroll-mt-20 py-4">
+        <section id="experience" className="scroll-mt-20 py-16">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -441,7 +445,7 @@ export default function Page() {
             <motion.div
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="rounded-3xl bg-white/70 backdrop-blur-sm border border-white/80 shadow-md shadow-slate-100 p-8 mb-6"
+              className="rounded-3xl bg-white/70 backdrop-blur-sm border border-white/80 shadow-md shadow-slate-100 p-8 mb-8"
             >
               <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-5">
                 <div
@@ -457,24 +461,24 @@ export default function Page() {
                       Current Role
                     </span>
                   </div>
-                  <p className="text-sm text-slate-400 mt-0.5">Rigved Technologies · Client: Holcim Australia & New Zealand</p>
+                  <p className="text-sm text-slate-400 mt-0.5">Rigved Info Tech · Client: Holcim Australia & New Zealand</p>
+                  {/* company confirmed */}
                 </div>
               </div>
-              <ul className="space-y-3">
-                {[
-                  "Managing enterprise-grade IT systems for international clients across Australia and New Zealand, ensuring continuous operational uptime and production stability.",
-                  "Owning critical production incident triage, root cause analysis, and resolution—consistently meeting and exceeding SLA targets in high-responsibility live environments.",
-                  "Performing deep diagnostic investigations on hardware, software, and network failures, driving permanent resolutions rather than temporary workarounds.",
-                  "Collaborating cross-functionally with infrastructure, application, and business teams to coordinate incident response and minimize business impact during outages.",
-                  "Administering and supporting ServiceNow and SAP platforms across enterprise workflows, ensuring system integrity and user productivity at scale.",
-                  "Maintaining detailed incident records, contributing to knowledge bases, and championing process improvements that increase operational reliability over time.",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
-                    <span className="text-blue-400 mt-0.5 flex-shrink-0">▸</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <ul className="space-y-4">
+  {[
+    "Owning critical production incident triage, root cause analysis, and resolution—consistently meeting and exceeding SLA targets in high-responsibility live environments.",
+    "Performing deep diagnostic investigations on hardware, software, and network failures, driving permanent resolutions rather than temporary workarounds.",
+    "Collaborating cross-functionally with infrastructure, application, and business teams to coordinate incident response and minimize business impact during outages.",
+    "Administering and supporting ServiceNow and SAP platforms across enterprise workflows, ensuring system integrity and user productivity at scale.",
+    "Maintaining detailed incident records, contributing to knowledge bases, and championing process improvements that increase operational reliability over time.",
+  ].map((item, i) => (
+    <li key={i} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
+      <span className="text-blue-400 mt-0.5 flex-shrink-0">▸</span>
+      {item}
+    </li>
+  ))}
+</ul>
               <div className="flex flex-wrap gap-2 mt-6">
                 {["ServiceNow", "SAP", "ITIL", "Incident Management", "SLA Compliance", "Root Cause Analysis"].map((t) => (
                   <span key={t} className="text-xs font-medium px-3 py-1 rounded-full bg-slate-50 text-slate-500 border border-slate-100">
@@ -507,7 +511,7 @@ export default function Page() {
                   <p className="text-sm text-slate-400 mt-0.5">HCL Tech · Remote</p>
                 </div>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   "Performed exploratory data analysis (EDA), preprocessing, and feature engineering on large datasets to prepare clean, model-ready inputs.",
                   "Built and validated machine learning models for predictive analysis, evaluating performance using cross-validation and standard ML metrics.",
@@ -533,7 +537,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── AI & AUTOMATION ─────────────────────────── */}
-        <section id="ai-&-automation" className="scroll-mt-20 py-4">
+        <section id="ai-&-automation" className="scroll-mt-20 py-16">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -561,7 +565,7 @@ export default function Page() {
                 <p className="text-sm text-slate-600 leading-relaxed mb-5">
                   Engineered a fully autonomous AI Voice Bot that handles end-to-end customer interactions without human intervention. The system integrates real-time <strong>speech-to-text</strong> transcription, routes queries through an <strong>LLM-powered conversation engine</strong>, and delivers natural responses via <strong>text-to-speech synthesis</strong>—all in under two seconds.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3 mb-8">
                   {[
                     "Real-time STT/TTS pipeline with sub-2s response latency",
                     "LLM-driven context-aware dialogue management",
@@ -569,8 +573,8 @@ export default function Page() {
                     "Multi-service API integration (CRM, ticketing, knowledge base)",
                     "Graceful fallback escalation to human agents when needed",
                   ].map((item, i) => (
-                    <li key={i} className="flex gap-2 text-xs text-slate-600">
-                      <span className="text-violet-400">✦</span> {item}
+                    <li key={i} className="flex gap-2 text-sm text-slate-600">
+                      <span className="text-violet-400 flex-shrink-0">✦</span> {item}
                     </li>
                   ))}
                 </ul>
@@ -595,7 +599,7 @@ export default function Page() {
                 <p className="text-sm text-slate-600 leading-relaxed mb-5">
                   Developed an intelligent candidate screening system using <strong>NLP-based resume parsing</strong> and <strong>semantic similarity matching</strong> to automatically rank applicants against job descriptions. Replaced hours of manual review with an automated pipeline that surfaces the best-fit candidates in seconds.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3 mb-8">
                   {[
                     "NLP resume parser extracting structured skills, experience & education",
                     "Semantic vector embedding for deep concept-level matching",
@@ -603,8 +607,8 @@ export default function Page() {
                     "Automated screening workflow — 3× faster than manual review",
                     "Bias-mitigated matching based purely on skills and relevance",
                   ].map((item, i) => (
-                    <li key={i} className="flex gap-2 text-xs text-slate-600">
-                      <span className="text-emerald-400">✦</span> {item}
+                    <li key={i} className="flex gap-2 text-sm text-slate-600">
+                      <span className="text-emerald-400 flex-shrink-0">✦</span> {item}
                     </li>
                   ))}
                 </ul>
@@ -623,7 +627,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── PROJECTS ─────────────────────────── */}
-        <section id="projects" className="scroll-mt-20 py-4">
+        <section id="projects" className="scroll-mt-20 py-16">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -648,7 +652,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── SKILLS ─────────────────────────── */}
-        <section id="skills" className="scroll-mt-20 py-4">
+        <section id="skills" className="scroll-mt-20 py-16">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -671,7 +675,12 @@ export default function Page() {
 
             {/* Tech badges */}
             <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 justify-center">
-              {["GitHub", "Docker", "REST APIs", "Linux", "Jira", "VS Code", "Jupyter", "Azure"].map((t) => (
+              {[
+                "NumPy", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn",
+                "FastAPI", "Flask", "Django", "REST APIs", "JSON",
+                "MySQL", "SAP NetWeaver", "Ozonetel", "GitHub", "VS Code",
+                "TensorFlow", "ServiceNow", "C/C++"
+              ].map((t) => (
                 <span key={t} className="text-sm font-medium px-4 py-2 rounded-xl bg-white/70 backdrop-blur border border-slate-200 text-slate-600 shadow-sm">
                   {t}
                 </span>
@@ -683,7 +692,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── CONTACT ─────────────────────────── */}
-        <section id="contact" className="scroll-mt-20 py-4 pb-24">
+        <section id="contact" className="scroll-mt-20 py-16 pb-28">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -765,7 +774,7 @@ export default function Page() {
         <Divider />
 
         {/* ─────────────────────────── EDUCATION ─────────────────────────── */}
-        <section className="scroll-mt-20 py-4 pb-8">
+        <section className="scroll-mt-20 py-16 pb-20">
           <motion.div
             variants={stagger}
             initial="hidden"
