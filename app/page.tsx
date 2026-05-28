@@ -752,7 +752,7 @@ export default function Page() {
                 🐙 &nbsp; GitHub
               </motion.a>
               <motion.a
-                href="/resume.pdf"
+                href="/Piyush.Patel_9324884632_Resume.pdf"
                 download
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
